@@ -1,3 +1,4 @@
+import json
 from fetch_matches import fetch_todays_games
 from emailer import send_email
 
@@ -10,10 +11,12 @@ def format_email_content(data):
         email_content += f"{fixture['home_name']} vs {fixture['away_name']} at {fixture['time']} - {fixture['competition']['name']}\n"
     return email_content
 
-def main():
+def lambda_handler(event, context):
     data = fetch_todays_games()
     email_body = format_email_content(data)
     send_email("Today's Football Matches", email_body)
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Email sent successfully')
+    }
 
-if __name__ == "__main__":
-    main()
