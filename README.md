@@ -1,6 +1,6 @@
 # Today's Football Matches Emailer
 
-This project fetches today's football matches from the Live Score API and sends the details via email using SendGrid. It has been updated to run as an AWS Lambda function, allowing for serverless execution and scheduling.
+This project fetches today's football matches from the Live Score API and sends the details via email using SendGrid. It is designed to run as an AWS Lambda function, enabling serverless execution and scheduling.
 
 ## Features
 
